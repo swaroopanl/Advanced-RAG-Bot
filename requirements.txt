@@ -1,0 +1,6 @@
+gradio
+transformers
+sentence-transformers
+PyMuPDF
+faiss-cpu
+pyyaml
