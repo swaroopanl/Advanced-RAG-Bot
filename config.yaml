@@ -1,19 +1,35 @@
-model:
-  name: google/flan-t5-base
-  task: text2text-generation
-  max_new_tokens: 256
-  trust_remote_code: false
+# model:
+#   name: google/flan-t5-base
+#   task: text2text-generation
+#   max_new_tokens: 256
+#   trust_remote_code: false
+
+openai:
+  model_name: gpt-3.5-turbo # Or any other model like gpt-4, gpt-4-turbo-preview, etc.
+  temperature: 0.1 # Lower temperature for more factual RAG outputs
+  max_output_tokens: 512 # Max tokens for the LLM to generate
 
 retrieval:
-  top_k: 3
+  top_k: 1
+  temperature: 0
 
 chunking:
   size: 1000
   overlap: 100
+  max_chunks: 500
+
+embedding:
+  provider: "openai"
+  model_name: "text-embedding-3-small"
+
+
+app:
+  title: "Advanced Clinical Intelligent RAG Chatbot"
 
 prompt:
   template: |
-    You are a helpful assistant. Use the context below to answer the user's question.
+    You are a helpful assistant. Use ONLY the context below to answer the user's question.
+    If the answer to the question is not found within the provided context, you MUST respond with: "Thanks for your question. Unfortunately, it's not in my knowledgebase." Do not try to answer from your general knowledge.
 
     Context: {context}
     Question: {question}

@@ -1,6 +1,8 @@
 gradio
-transformers
-sentence-transformers
 PyMuPDF
 faiss-cpu
 pyyaml
+psutil
+openai
+langchain
+langchain-openai
