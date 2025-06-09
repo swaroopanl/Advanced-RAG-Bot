@@ -1,3 +1,17 @@
+---
+title: Advanced Clinical Intelligent RAG Chatbot
+emoji: 🤖
+colorFrom: blue
+colorTo: green
+sdk: gradio
+sdk_version: "4.20.0"
+python_version: "3.9"
+app_file: app.py
+pinned: false
+secrets:
+  - OPENAI_API_KEY
+---
+
 # Advanced Clinical Intelligent RAG Chatbot
 
 This project implements a Retrieval Augmented Generation (RAG) chatbot designed to answer questions based on the content of uploaded PDF documents, with a focus on clinical or technical information. It uses OpenAI's language models for both generating embeddings and answering questions, and Gradio for the user interface.
@@ -14,7 +28,7 @@ This project implements a Retrieval Augmented Generation (RAG) chatbot designed 
 ## Project Structure
 
 ```
-rag-chatbot/
+Advanced-Rag-chatbot/
 ├── app.py                # Main Gradio application
 ├── rag_pipeline.py       # Core RAG logic (PDF processing, embedding, QA)
 ├── utils.py              # Utility functions (PDF loading, chunking, embedding calls)
